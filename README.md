@@ -93,3 +93,16 @@ lệnh sw)
  - MemtoReg = 0: Giá trị đưa vào ngõ “Write data” đến từ ALU (dành cho các lệnh add, sub, and, or, slt)
 - MemtoReg = 1: Giá trị đưa vào ngõ “Write data” đến từ khối “Data memory” (dành cho lệnh lw)- Lệnh sw và beq không sử dụng giá trị này
 # KIỂM TRA HOẠT ĐỘNG CỦA THIẾT KẾ. 
+- Để kiểm tra hoạt động của processor, ta tiến hành khởi tạo mã máy vào khối INSTRUCTION MEMMORY và khởi tạo dữ liệu trong khối thanh ghi.
+
+  <img width="926" height="473" alt="image" src="https://github.com/user-attachments/assets/62f4c52d-f0d9-42b2-b99e-93ee1f4e4fab" />
+
+  <img width="860" height="474" alt="image" src="https://github.com/user-attachments/assets/72d52395-520c-424d-bd43-141e537efdb2" />
+- kết quả mô phỏng bằng testbench.
+
+<img width="1900" height="849" alt="image" src="https://github.com/user-attachments/assets/c3d95068-8865-4034-ac67-b9541b36650e" />
+
+- Để kiểm tra lệnh thực hiện đúng hay sai chúng ta chỉ cần kiểm tra khối REGISTER FILE đối với các lệnh định dạng R và kiểm tra khối DATA_MEMORY đối với các lệnh LW , SW;
+  đối với lệnh nhảy thì ta kiểm tra thanh ghi PC. 
+
+
