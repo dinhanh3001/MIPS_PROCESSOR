@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../MIPS.srcs/sources_1/new/ADDER_4.v" \
+"../../../../MIPS.srcs/sources_1/new/ADDER_BRANCH.v" \
+"../../../../MIPS.srcs/sources_1/new/ALU.v" \
+"../../../../MIPS.srcs/sources_1/new/ALU_CONTROL.v" \
+"../../../../MIPS.srcs/sources_1/new/AND_BRANCH.v" \
+"../../../../MIPS.srcs/sources_1/new/CONTROL_UNIT.v" \
+"../../../../MIPS.srcs/sources_1/new/DATA_MEMORY.v" \
+"../../../../MIPS.srcs/sources_1/new/IMEM.v" \
+"../../../../MIPS.srcs/sources_1/new/MIPS.v" \
+"../../../../MIPS.srcs/sources_1/new/MUX_ALU.v" \
+"../../../../MIPS.srcs/sources_1/new/MUX_BRANCH.v" \
+"../../../../MIPS.srcs/sources_1/new/MUX_DATA_MEM.v" \
+"../../../../MIPS.srcs/sources_1/new/MUX_REGISTER.v" \
+"../../../../MIPS.srcs/sources_1/new/PC.v" \
+"../../../../MIPS.srcs/sources_1/new/REGISTER_FILE.v" \
+"../../../../MIPS.srcs/sources_1/new/SHIFTER.v" \
+"../../../../MIPS.srcs/sources_1/new/SIGN_EXTEND.v" \
+"../../../../MIPS.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
