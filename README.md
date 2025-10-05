@@ -107,7 +107,8 @@ lệnh sw)
 
 - Để kiểm tra lệnh thực hiện đúng hay sai chúng ta chỉ cần kiểm tra khối REGISTER FILE đối với các lệnh định dạng R và kiểm tra khối DATA_MEMORY đối với các lệnh LW , SW;
   đối với lệnh nhảy thì ta kiểm tra thanh ghi PC. 
-ví dụ: lệnh đầu tiền là s
+ví dụ: lệnh đầu tiền là ADD t1, t2, t3;  Thanh ghi t2 là register[10] và t3 là register [11]  đã được khởi tạo giá trị là 15 và 8 cộng lại là 17 ( như trên hình ) 
+
 
 
 
