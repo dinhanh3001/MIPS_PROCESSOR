@@ -48,8 +48,48 @@ Những lệnh không ghi kết quả như: store, branch, jump:
 <img width="1019" height="479" alt="image" src="https://github.com/user-attachments/assets/f1d56582-e331-4055-81cc-b8423a65d45d" />
 
 # Khối control với các tín hiệu sau:
+<img width="655" height="389" alt="image" src="https://github.com/user-attachments/assets/9f98fe89-ddaa-4d5b-96f1-c0fda94df18b" />
+
   RegDst dùng để chọn thanh ghi đích cho thao tác ghi:
 - RegDst = 0: Các bit từ 16:20 được chọn (rt - dành cho lệnh loadword)
 - RegDst = 1: Các bit từ 11:15 được chọn (rd - dành cho các lệnh còn lại như add, sub, and, or, slt)
 - Lệnh sw và beq không sử dụng giá trị này
+<img width="579" height="398" alt="image" src="https://github.com/user-attachments/assets/4bb500d0-df9b-4298-855d-08ffed4eb14f" />
 
+RegWrite dùng để cho phép thao tác ghi vào khối thanh ghi: 
+- RegWrite = 0: Khối thanh ghi chỉ có chức năng đọc (dành cho các lệnh sw và beq)
+- RegWrite = 1: Khối thanh ghi có thể thực hiện chứ năng đọc và ghi. Thanh ghi được ghi là thanh ghi có chỉ số được đưa vào từ ngõ “Write register” và dữ 
+liệu dùng ghi vào thanh ghi này được lấy từ ngõ “Write data” (dành cho các lệnh còn lại
+
+<img width="627" height="392" alt="image" src="https://github.com/user-attachments/assets/52f2fbe9-d6fa-45f1-add3-418a1deb1064" />
+
+ALUSrc dùng để chọn đầu vào thứ 2 cho khối ALU: 
+- ALUSrc = 0: Đầu vào thứ 2 cho ALU đến từ “Read data 2” của khối “Registers (dành cho các lệnh add, sub, and, or, slt, beq)
+- ALUSrc = 1: Đầu vào thứ 2 cho ALU đến từ output của khối “Signextend” (dành cho các lệnh còn lại như lw và sw)
+
+<img width="587" height="387" alt="image" src="https://github.com/user-attachments/assets/56b7ce1e-e037-4a25-ada8-f936a1b3963b" />
+
+ Branch dùng để kết hợp (AND) với giá trị Zero của ALU chọn giá trị sẽ được nạp vào thanh ghi PC:
+ - Branch = 0: Giá trị của PC đến từ khối Add (4) PC = PC + 4 (dành cho các lệnh add, sub, and, or, slt, lw, sw)
+ - - Branch = 1: Tùy thuộc vào giá trị của Zero của khối ALU (dành cho lệnh beq).
+ Nếu Zero = 0: Giá trị của PC đến từ khối Add (4) PC = PC + 4
+ Nếu Zero = 1: Giá trị của PC đến từ khối Add (Shift left 2) PC = PC + 4 + Lable
+
+<img width="602" height="412" alt="image" src="https://github.com/user-attachments/assets/f8e6debb-fcb6-4c64-8ead-d607e9d2404f" />
+MemRead dùng để cho phép thao tác đọc từ khối Data memory: 
+- MemRead = 1: Khối “Data memory” thực hiện chức năng đọc dữ liệu. Địa chỉ dữ liệu cần đọc được đưa vào từ ngõ “Address” và nội dung đọc được 
+xuất ra ngõ “Read data” (dành cho lệnh lw)
+- MemRead = 0: Khối “Data memory” không thực hiện chức năng đọc dữ liệu (dành cho các lệnh còn lại)
+
+<img width="618" height="402" alt="image" src="https://github.com/user-attachments/assets/2011a1b5-3a7e-4241-add1-db44d07330f1" />
+MemWrite dùng để cho phép thao tác ghi vào khối Data memory:
+- MemWrite = 1: Khối “Data memory” thực hiện chức năng ghi dữ liệu. Địa chỉ dữ liệu cần ghi được đưa vào từ ngõ “Address” và nội dung ghi vào lấy từ ngõ “Write data” (dành cho 
+lệnh sw)
+- MemWrite = 0: Khối “Data memory” không thực hiện chức năng ghi dữ liệu (dành cho các lệnh còn lại)
+
+<img width="615" height="428" alt="image" src="https://github.com/user-attachments/assets/cdcfc4ac-fc5f-47f6-9e3f-6ae01e09d1f6" />
+
+ MemtoReg dùng để chọn giá trị được đưa vào ngõ Write data của khối Registers:
+ - MemtoReg = 0: Giá trị đưa vào ngõ “Write data” đến từ ALU (dành cho các lệnh add, sub, and, or, slt)
+- MemtoReg = 1: Giá trị đưa vào ngõ “Write data” đến từ khối “Data memory” (dành cho lệnh lw)- Lệnh sw và beq không sử dụng giá trị này
+# KIỂM TRA HOẠT ĐỘNG CỦA THIẾT KẾ. 
