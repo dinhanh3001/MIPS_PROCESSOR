@@ -30,12 +30,14 @@ quả so sánh
 chỉ đích sẽ nhảy tới
 khối control ALU được thiết kế dựa vào 6 bít trường opcode và 2 bít được sinh ra từ khối CONTROL ( sẽ đề cập sau) 
 <img width="433" height="471" alt="image" src="https://github.com/user-attachments/assets/65b2e34b-81ef-4aa5-a6c9-124e826bca58" />
+
 - Giai đoạn truy xuất vùng nhớ:
  Chỉ có lệnh Load và Store cần thực hiện các thao tác trong giai đoạn này:
  Sử dụng địa chỉ vùng nhớ được tính toán ở giai đoạn ALU
  Đọc dữ liệu ra hoặc ghi dữ liệu vào vùng nhớ dữ liệu
 Tất cả các lệnh khác sẽ rảnh trong giai đoạn này
 <img width="1033" height="443" alt="image" src="https://github.com/user-attachments/assets/d5de3cce-565a-4dcd-a6cf-87522179c9ee" />
+
 - Giai đoạn lưu trữ kết quả:
 Những lệnh ghi kết quả của các phép toán vào thanh ghi:
  Ví dụ: số học, logic, shifts, load, set-less-than
@@ -50,3 +52,4 @@ Những lệnh không ghi kết quả như: store, branch, jump:
 - RegDst = 0: Các bit từ 16:20 được chọn (rt - dành cho lệnh loadword)
 - RegDst = 1: Các bit từ 11:15 được chọn (rd - dành cho các lệnh còn lại như add, sub, and, or, slt)
 - Lệnh sw và beq không sử dụng giá trị này
+
