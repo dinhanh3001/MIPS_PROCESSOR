@@ -3,6 +3,9 @@ Bộ vi xử lý MIPS với 8 lệnh cơ bản ADD, SUB, AND, OR, SLT, LW, SW, B
 # DATAPATHS: 
 <img width="668" height="488" alt="image" src="https://github.com/user-attachments/assets/d7d3ebd3-6b01-4f5d-95cd-5d493196aa27" />
 
+
+<img width="755" height="884" alt="image" src="https://github.com/user-attachments/assets/d1f2667c-675d-45e2-9ec2-fdc26e736fdb" />
+
 # QUY ƯỚC THIẾT KẾ: 
 - MẠCH TỔ HỢP: ALU/ADD/MUX
 - MẠCH TUẦN TỰ: instruction/data memories và thanh ghi
@@ -108,6 +111,7 @@ lệnh sw)
 - Để kiểm tra lệnh thực hiện đúng hay sai chúng ta chỉ cần kiểm tra khối REGISTER FILE đối với các lệnh định dạng R và kiểm tra khối DATA_MEMORY đối với các lệnh LW , SW;
   đối với lệnh nhảy thì ta kiểm tra thanh ghi PC. 
 ví dụ: lệnh đầu tiền là ADD t1, t2, t3;  Thanh ghi t2 là register[10] và t3 là register [11]  đã được khởi tạo giá trị là 15 và 8 cộng lại là 17 ( như trên hình ) 
+
 
 
 
