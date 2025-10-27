@@ -103,9 +103,9 @@ MemtoReg is used to select the value to be input into the Write data port of the
 <img width="1900" height="849" alt="image" src="https://github.com/user-attachments/assets/c3d95068-8865-4034-ac67-b9541b36650e" />
 
 - To check if the command is executed correctly or not, we just need to check the REGISTER FILE block for R format commands and check the DATA_MEMORY block for LW, SW commands;
-
 for jump commands, we check the PC register.
 For example: the first command is ADD t1, t2, t3; Register t2 is register[10] and t3 is register[11] which has been initialized to the value of 15 and 8, which adds up to 17 (as shown in the picture)
+
 
 
 
